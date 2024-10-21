@@ -1,4 +1,5 @@
 import math
+from itertools import count
 
 
 def is_prime(n):
@@ -36,5 +37,12 @@ def primes_in_range(start, stop):
     return prime_string
 
 
+def next_prime(n):
+
+    for i in count(n + 1):
+        if is_prime(i):
+            return i
+
+
 if __name__ == "__main__":
-    print(primes_in_range(1, 18))
+    print(next_prime(13))
