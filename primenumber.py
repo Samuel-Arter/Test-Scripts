@@ -2,6 +2,21 @@ import math
 from itertools import count
 
 
+def filters():
+    while True:
+        try:
+
+            selected_num = int(input("insert a number between 0 and 1000000: ").strip())
+
+            if selected_num in range(0, 1000000):
+                return selected_num
+            else:
+                print("cannot enter integer less than 0 or greater than 1000000")
+
+        except ValueError:
+            print("only insert numbers")
+
+
 def is_prime(n):
     if n < 2:
         return False
@@ -45,4 +60,4 @@ def next_prime(n):
 
 
 if __name__ == "__main__":
-    print(next_prime(13))
+    integer = filters()
