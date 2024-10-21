@@ -61,3 +61,7 @@ def next_prime(n):
 
 if __name__ == "__main__":
     integer = filters()
+    print("--"*40)
+    print(f"{integer} is prime?: {is_prime(integer)}")
+    print(f"the sum of all prime numbers up to {integer} is: {sum_primes(integer)}")
+    print(f"the next prime number after {integer} is: {next_prime(integer)}")
