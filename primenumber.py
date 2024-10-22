@@ -6,9 +6,9 @@ def filters():
     while True:
         try:
 
-            integer1 = int(input("insert a number between 0 and 1000000: ").strip())
+            num_1 = int(input("insert a number between 0 and 1000000: ").strip())
 
-            if integer1 in range(0, 1000000):
+            if num_1 in range(0, 1000000):
                 break
             else:
                 print("cannot enter integer less than 0 or greater than 1000000")
@@ -19,9 +19,9 @@ def filters():
     while True:
         try:
 
-            integer2 = int(input("insert a number greater than the number previously entered and less then 1000000: "))
+            num_2 = int(input("insert a number greater than the number previously entered and less then 1000000: "))
 
-            if integer2 in range(integer1 + 1, 1000000):
+            if num_2 in range(num_1 + 1, 1000000):
                 break
             else:
                 print("integer entered must be greater than previously entered integer")
@@ -29,7 +29,7 @@ def filters():
         except ValueError:
             print("only insert numbers")
 
-    return integer1, integer2
+    return num_1, num_2
 
 
 def is_prime(n):
@@ -75,8 +75,9 @@ def next_prime(n):
 
 
 if __name__ == "__main__":
-    integer1, integer2 = filters()
+    num1, num2 = filters()
     print("--"*40)
-    print(f"{integer1} is prime?: {is_prime(integer1)}")
-    print(f"the sum of all prime numbers up to {integer1} is: {sum_primes(integer1)}")
-    print(f"the next prime number after {integer1} is: {next_prime(integer1)}")
+    print(f"{num1} is prime?: {is_prime(num1)}")
+    print(f"the sum of all prime numbers up to {num1} is: {sum_primes(num1)}")
+    print(f"the next prime number after {num1} is: {next_prime(num1)}")
+    print(f"all the primes sitting in the range {num1} and {num2} are: {primes_in_range(num1, num2)}")
