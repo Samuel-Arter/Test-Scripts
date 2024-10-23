@@ -1,4 +1,4 @@
-import math
+from math import sqrt
 from itertools import count
 
 
@@ -40,7 +40,7 @@ def is_prime(n):
     elif n % 2 == 0:
         return False
 
-    for i in range(3, int(math.sqrt(n)) + 1, 2):
+    for i in range(3, int(sqrt(n)) + 1, 2):
         if n % i == 0:
             return False
 
@@ -58,7 +58,7 @@ def sum_primes(num):
 
 def primes_in_range(start, stop):
     prime_list = []
-    for n in range(start, stop):
+    for n in range(start, stop + 1):
         if is_prime(n):
             prime_list.append(n)
 
@@ -81,3 +81,5 @@ if __name__ == "__main__":
     print(f"the sum of all prime numbers up to {num1} is: {sum_primes(num1)}")
     print(f"the next prime number after {num1} is: {next_prime(num1)}")
     print(f"all the primes sitting in the range {num1} and {num2} are: {primes_in_range(num1, num2)}")
+    print("End of Script")
+    print("--" * 40)
