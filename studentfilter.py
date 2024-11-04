@@ -14,7 +14,24 @@ def select_students(students, threshold):
 
     return output1
 
-if __name__ == "__main__":
-    my_class = [['Kermit Wade', 27], ['Hattie Schleusner', 1], ['Ben Ball', 5], ['William Lee', 2]]
-    print(select_students(my_class, 20))
 
+def select_student(students, threshold):
+    accepted = []
+    rejected = []
+
+    for student_score in students:
+        if student_score[1] >= threshold:
+            accepted.append(student_score)
+            accepted.sort(reverse=True, key=lambda s: s[1])
+        else:
+            rejected.append(student_score)
+            rejected.sort(reverse=False, key=lambda s: s[1])
+
+    output = {'Accepted': accepted, 'Rejected': rejected}
+
+    return output
+
+
+if __name__ == "__main__":
+    my_class = [['Kermit Wade', 27], ['Hattie Schleusner', 22], ['Ben Ball', 54], ['William Lee', 2], ['Henry Lee', 15]]
+    print(select_student(my_class, 20))
