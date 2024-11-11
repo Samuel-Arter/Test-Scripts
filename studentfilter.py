@@ -20,7 +20,8 @@ def select_students(students, threshold):
         else:
             output['Rejected'].append(student_score)
 
-    result = {'Accepted': sorted(output['Accepted'], key=lambda x: x[1], reverse=True), 'Rejected': sorted(output['Rejected'], key=lambda x: x[1], reverse=False)}
+    result = {'Accepted': sorted(output['Accepted'], key=lambda x: x[1], reverse=True),
+              'Rejected': sorted(output['Rejected'], key=lambda x: x[1], reverse=False)}
 
     return result
 
@@ -36,17 +37,30 @@ def select_student(students, threshold):
     for student_score in students:
         if student_score[1] >= threshold:
             accepted.append(student_score)
-            accepted.sort(reverse=True, key=lambda s: s[1])
         else:
             rejected.append(student_score)
-            rejected.sort(reverse=False, key=lambda s: s[1])
+
+    accepted.sort(reverse=True, key=lambda s: s[1])
+    rejected.sort(reverse=False, key=lambda s: s[1])
 
     output = {'Accepted': accepted, 'Rejected': rejected}
 
     return output
 
 
+def student_select(students, threshold):
+
+    a = [student for student in students if student[1] >= threshold]
+    r = [student for student in students if student[1] < threshold]
+
+    result = {'Accepted': sorted(a, key=lambda s: s[1], reverse=True),
+              'Rejected': sorted(r, key=lambda s: s[1])}
+
+    return result
+
+
 if __name__ == "__main__":
-    my_class = [['Kermit Wade', 27], ['Hattie Schleusner', 22], ['Ben Ball', 54], ['William Lee', 2], ['Henry Lee', 15]]
+    my_class = [['Kermit Wade', 27], ['Hattie Schleusner', 22], ['Ben Ball', 54], ['William Lee', 2], ['Henry Lee', 15], ['Stagger Lee', 99]]
     print(select_students(my_class, 20))
     print(select_student(my_class, 20))
+    print(student_select(my_class,20))
