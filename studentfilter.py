@@ -1,4 +1,4 @@
-
+# A script with several functions that return the same result but written in different ways
 
 def select_students(students, threshold):
     """
@@ -30,8 +30,9 @@ def select_students(students, threshold):
 def select_student(students, threshold):
     """
     This function that returns a dictionary containing an ordered set of lists of 'accepted' and 'rejected'
-    students. This function is meant to be an improved version of the previous function.
+    students. This function employs the use of lists unlike the last function.
     """
+
     accepted = []
     rejected = []
 
@@ -50,6 +51,9 @@ def select_student(students, threshold):
 
 
 def student_select(students, threshold):
+    """
+    Returns same result as previous functions. This function employs the use of list comprehension
+    """
 
     a = [student for student in students if student[1] >= threshold]
     r = [student for student in students if student[1] < threshold]
