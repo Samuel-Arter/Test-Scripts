@@ -1,4 +1,5 @@
 
+
 def select_students(students, threshold):
     """
     A function to determine which students have/haven't met a specific threshold
@@ -8,7 +9,7 @@ def select_students(students, threshold):
         2. (threshold) An integer which determines whether a student will be accepted/rejected
 
     Returns:
-        result - A dictionary containing ordered sets of lists of 'Accepted' and 'Rejected' students and their grade
+        output - A dictionary containing ordered sets of lists of 'Accepted' and 'Rejected' students and their grade
     """
 
     output = {'Accepted': [], 'Rejected': []}
@@ -20,10 +21,10 @@ def select_students(students, threshold):
         else:
             output['Rejected'].append(student_score)
 
-    result = {'Accepted': sorted(output['Accepted'], key=lambda x: x[1], reverse=True),
-              'Rejected': sorted(output['Rejected'], key=lambda x: x[1], reverse=False)}
+    output['Accepted'].sort(key=lambda x: x[1], reverse=True)
+    output['Rejected'].sort(key=lambda x: x[1], reverse=False)
 
-    return result
+    return output
 
 
 def select_student(students, threshold):
