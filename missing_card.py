@@ -27,4 +27,8 @@ def missing_card(cards):
             return card
 
 if __name__ == "__main__":
-    print(get_cards())
+    selected_cards = get_cards()
+    print("---"*40)
+    print(f"the selected cards are: {selected_cards}")
+    print(f"the missing card is: {missing_card(selected_cards)}")
+    print("---"*40)
