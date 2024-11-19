@@ -11,9 +11,13 @@ deck = [''.join(x) for x in combination]
 def get_cards():
 
     selected_cards = []
+    deck_temp = deck.copy()
 
     for x in range(51):
-        selected_cards.append(random.choice(deck))
+
+        card_drawn = random.choice(deck_temp)
+        selected_cards.append(card_drawn)
+        deck_temp.remove(card_drawn)
 
     cards_string = " ".join(selected_cards)
 
@@ -25,6 +29,7 @@ def missing_card(cards):
     for card in deck:
         if card not in cards:
             return card
+
 
 if __name__ == "__main__":
     selected_cards = get_cards()
