@@ -1,3 +1,4 @@
+# produces a sequence in which each number is the sum of the two preceding ones
 def fibonacci(n):
     sequence = []
 
