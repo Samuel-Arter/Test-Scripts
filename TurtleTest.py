@@ -34,31 +34,36 @@ def square():
     done()
     return
 
-def polygon():
-    # create turtle
-    turtle = Turtle()
-    turtle.shape('turtle')
+
+def triangle_octagon():
 
     # select number of sides/vertices
     while True:
         try:
-            num_vert = input(int("Pick a number between 3 - 8: ").strip())
+            num_vert = int(input("Pick a number between 3 - 8: ").strip())
 
-            if num_vert < 3 or num_vert > 3:
-                print("Please pick a number between 3 - 8 only")
-            else:
+            if 3 <= num_vert <=8:
                 break
+            else:
+                print("Please pick a number between 3 - 8 only")
 
         except ValueError:
-              print("insert numbers only")
+            print("insert numbers only")
 
-    # turtle movement
+    # turtle create
+    turtle = Turtle()
+    turtle.shape('turtle')
+
+    # turtle movement (exterior angles of polygon always add up to 360 degrees)
     for _ in range(num_vert):
+        turtle.forward(100)
+        turtle.left(360/num_vert)
 
-
+    done()
+    return
 
 
 
 # chose a function to run
 if __name__ == "__main__":
-    square()
+    triangle_octagon()
