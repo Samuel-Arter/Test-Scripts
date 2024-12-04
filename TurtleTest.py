@@ -50,10 +50,16 @@ def triangle_octagon():
     turtle = Turtle()
     turtle.shape('turtle')
 
+    # create fill color (fill color is dependent on whether num_vert is even or odd
+    colors = ['red', 'blue']
+    turtle.color('black', colors[num_vert % 2])
+
     # turtle movement (exterior angles of all polygons add up to 360 degrees)
+    turtle.begin_fill()
     for _ in range(num_vert):
         turtle.forward(100)
         turtle.left(360/num_vert)
+    turtle.end_fill()
 
     done()
     return
@@ -62,4 +68,4 @@ def triangle_octagon():
 
 # chose a function to run
 if __name__ == "__main__":
-    triangle()
+    triangle_octagon()
