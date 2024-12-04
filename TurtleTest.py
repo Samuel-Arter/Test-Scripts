@@ -65,7 +65,22 @@ def triangle_octagon():
     return
 
 
+def flower():
+    # create turtle
+    turtle = Turtle()
+    turtle.shape('arrow')
+    turtle.color('red', 'yellow')
+
+    # turtle movement
+    turtle.begin_fill()
+    for _ in range(25):
+        turtle.forward(200)
+        turtle.left(165)
+    turtle.end_fill()
+
+    done()
+    return
 
 # chose a function to run
 if __name__ == "__main__":
-    triangle_octagon()
+    flower()
