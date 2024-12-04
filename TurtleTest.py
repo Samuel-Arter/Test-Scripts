@@ -9,13 +9,9 @@ def triangle():
     turtle.shape('turtle')
 
     # turtle movement
-    turtle.forward(100)
-    turtle.left(135)
-    turtle.forward(100)
-    turtle.left(90)
-    turtle.forward(100)
-    turtle.left(135)
-    turtle.forward(45)
+    for _ in range(3):
+        turtle.forward(100)
+        turtle.left(120)
 
     done()
     return
@@ -54,7 +50,7 @@ def triangle_octagon():
     turtle = Turtle()
     turtle.shape('turtle')
 
-    # turtle movement (exterior angles of polygon always add up to 360 degrees)
+    # turtle movement (exterior angles of all polygons add up to 360 degrees)
     for _ in range(num_vert):
         turtle.forward(100)
         turtle.left(360/num_vert)
@@ -66,4 +62,4 @@ def triangle_octagon():
 
 # chose a function to run
 if __name__ == "__main__":
-    triangle_octagon()
+    triangle()
