@@ -1,6 +1,6 @@
 # A python script to test the turtle module
 from turtle import *
-
+import random
 
 def triangle():
     # create turtle
@@ -81,6 +81,26 @@ def flower():
     done()
     return
 
-# chose a function to run
+
+def stars():
+    # create turtle
+    turtle = Turtle()
+    turtle.shape('arrow')
+    colors = ['red', 'green', 'blue']
+
+    # turtle movement
+    for i in range(3):
+        turtle.fillcolor(colors[i])
+        turtle.begin_fill()
+        for _ in range(5):
+            turtle.forward(100)
+            turtle.left(216)
+        turtle.end_fill()
+        turtle.left(120)
+
+    done()
+    return
+
+# chose a function to run here
 if __name__ == "__main__":
-    flower()
+    stars()
