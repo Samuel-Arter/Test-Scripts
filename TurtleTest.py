@@ -1,6 +1,8 @@
 # A python script to test the turtle module
 from turtle import *
 from random import *
+from math import *
+
 
 def triangle():
     # create turtle
@@ -82,30 +84,37 @@ def flower():
     return
 
 
-def stars():
-    # set up screen
-    screensize(canvwidth=800, canvheight=800)
+def stars(num_sets, num_stars):
+    try:
+        # set up screen
+        screensize(canvwidth=500, canvheight=500)
 
-    # create turtle
-    turtle = Turtle()
-    turtle.shape('arrow')
-    colors = ['red', 'green', 'blue']
+        # create turtle
+        turtle = Turtle()
+        turtle.shape('arrow')
+        colors = ['red', 'green', 'blue']
+        turtle.speed(5)
 
-    # turtle movement
-    for n in range(4):
-        turtle.teleport(randint(-300, 300), y=randint(-300,300))
-        for i in range(3):
-            turtle.fillcolor(colors[i])
-            turtle.begin_fill()
-            for _ in range(5):
-                turtle.forward(100)
-                turtle.left(216)
-            turtle.end_fill()
-            turtle.left(120)
+        # turtle movement
+        for n in range(num_sets):
+            turtle.teleport(randint(-300, 300), y=randint(-300,300))
+            for i in range(num_stars):
+                turtle.fillcolor(colors[i % len(colors)])
+                turtle.begin_fill()
+                for _ in range(5):
+                    turtle.forward(100)
+                    turtle.left(216)
+                turtle.end_fill()
+                turtle.left(360/num_stars)
 
-    done()
-    return
+        done()
+        return
+
+    except TypeError:
+        print("Only enter integers as arguments")
+        return
+
 
 # chose a function to run here
 if __name__ == "__main__":
-    stars()
+    stars(4, 'hello')
