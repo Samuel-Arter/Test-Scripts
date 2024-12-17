@@ -97,7 +97,7 @@ def stars(num_sets, num_stars):
 
         # turtle movement
         for n in range(num_sets):
-            turtle.teleport(randint(-300, 300), y=randint(-300,300))
+            turtle.teleport(randint(-200, 200), y=randint(-200,200))
             for i in range(num_stars):
                 turtle.fillcolor(colors[i % len(colors)])
                 turtle.begin_fill()
@@ -114,7 +114,33 @@ def stars(num_sets, num_stars):
         print("Only enter integers as arguments")
         return
 
+def mathematical_function():
+
+    # set screen size
+    screensize(canvwidth=800, canvheight=800)
+
+    # set up turtle
+    pen = Turtle()
+    pen.shape('classic')
+    pen.pensize(2)
+
+    # draw graph axes
+    pen.up()
+    pen.goto(-300,0)
+    pen.down()
+    pen.goto(300,0)
+    pen.up()
+    pen.goto(0,-300)
+    pen.down()
+    pen.goto(0,300)
+    pen.up()
+    pen.home()
+
+
+    done()
+    return
+    
 
 # chose a function to run here
 if __name__ == "__main__":
-    stars(4, 'hello')
+    mathematical_function()
