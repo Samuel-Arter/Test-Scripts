@@ -114,15 +114,21 @@ def stars(num_sets, num_stars):
         print("Only enter integers as arguments")
         return
 
-def mathematical_function():
+
+# this function will be used within the mathematical function
+def my_function(x):
+    return x ** 2
+
+
+def mathematical_function(start_value, end_value):
 
     # set screen size
-    screensize(canvwidth=800, canvheight=800)
+    screensize(canvwidth=500, canvheight=500)
 
     # set up turtle
     pen = Turtle()
     pen.shape('classic')
-    pen.pensize(2)
+    pen.pensize(1)
 
     # draw graph axes
     pen.up()
@@ -135,6 +141,18 @@ def mathematical_function():
     pen.goto(0,300)
     pen.up()
     pen.home()
+
+    # change pen color/size
+    pen.color('red')
+    pen.pensize(2)
+
+    # Find starting y-coordinate for function:
+    y_coordinate = my_function(start_value)
+
+    # draw sqrt graph between 0 and 200 pixels
+    pen.down()
+    for x in range(-start_value, end_value + 1):
+        pen.goto(x,my_function(x))
 
 
     done()
