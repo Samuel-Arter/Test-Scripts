@@ -118,10 +118,17 @@ def stars(num_sets, num_stars):
 
 # this function will be used within the mathematical function
 def my_function(x):
+    # edit the line below to change the output of mathematical_function()
     return sin(radians(x))
 
 
-def mathematical_function(start_value,end_value,x_scale, y_scale):
+def mathematical_function(start_value, end_value, x_scale, y_scale):
+    """
+    A function designed to plot (continuous) functions using the turtle module. Edit the function above
+    (my_function()) in order to change the graph sketched. This function is limited in what it can do.
+    It requires the user to tinker the functions 4 arguments in order for a graph to be properly sketched.
+    Non-continuous functions will not be sketched properly.
+    """
 
     # set screen size
     screensize(canvwidth=800, canvheight=800)
