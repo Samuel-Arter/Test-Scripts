@@ -117,10 +117,10 @@ def stars(num_sets, num_stars):
 
 # this function will be used within the mathematical function
 def my_function(x):
-    return x ** 2
+    return pow(x,4) - 10*pow(x,2)
 
 
-def mathematical_function(start_value, end_value):
+def mathematical_function(start_value,end_value,scale):
 
     # set screen size
     screensize(canvwidth=500, canvheight=500)
@@ -146,14 +146,13 @@ def mathematical_function(start_value, end_value):
     pen.color('red')
     pen.pensize(2)
 
-    # Find starting y-coordinate for function:
-    y_coordinate = my_function(start_value)
+    # Move to starting position
+    pen.goto(start_value * scale, my_function(start_value))
 
     # draw sqrt graph between 0 and 200 pixels
     pen.down()
-    for x in range(-start_value, end_value + 1):
-        pen.goto(x,my_function(x))
-
+    for x in range(start_value, end_value):
+        pen.goto(x * scale,my_function(x))
 
     done()
     return
@@ -161,4 +160,4 @@ def mathematical_function(start_value, end_value):
 
 # chose a function to run here
 if __name__ == "__main__":
-    mathematical_function()
+    mathematical_function(-5,10, 15)
