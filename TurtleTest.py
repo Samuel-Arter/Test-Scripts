@@ -2,6 +2,7 @@
 from turtle import *
 from random import *
 from math import *
+from numpy import *
 
 
 def triangle():
@@ -117,18 +118,19 @@ def stars(num_sets, num_stars):
 
 # this function will be used within the mathematical function
 def my_function(x):
-    return pow(x,4) - 10*pow(x,2)
+    return sin(radians(x))
 
 
-def mathematical_function(start_value,end_value,scale):
+def mathematical_function(start_value,end_value,x_scale, y_scale):
 
     # set screen size
-    screensize(canvwidth=500, canvheight=500)
+    screensize(canvwidth=800, canvheight=800)
 
     # set up turtle
     pen = Turtle()
     pen.shape('classic')
     pen.pensize(1)
+    pen.speed(5)
 
     # draw graph axes
     pen.up()
@@ -147,12 +149,12 @@ def mathematical_function(start_value,end_value,scale):
     pen.pensize(2)
 
     # Move to starting position
-    pen.goto(start_value * scale, my_function(start_value))
+    pen.goto(start_value * x_scale, my_function(start_value) * y_scale)
 
     # draw sqrt graph between 0 and 200 pixels
     pen.down()
-    for x in range(start_value, end_value):
-        pen.goto(x * scale,my_function(x))
+    for x in arange(start_value, end_value, 0.3):
+        pen.goto(x * x_scale,my_function(x) * y_scale)
 
     done()
     return
@@ -160,4 +162,4 @@ def mathematical_function(start_value,end_value,scale):
 
 # chose a function to run here
 if __name__ == "__main__":
-    mathematical_function(-5,10, 15)
+    mathematical_function(-180,180, 1, 200)
