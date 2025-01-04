@@ -5,21 +5,6 @@ from math import *
 from numpy import *
 
 
-
-def square():
-    # create turtle
-    turtle = Turtle()
-    turtle.shape('turtle')
-
-    # turtle movement
-    for _ in range(4):
-        turtle.forward(100)
-        turtle.left(90)
-
-    done()
-    return
-
-
 def triangle_octagon():
 
     # select number of sides/vertices
