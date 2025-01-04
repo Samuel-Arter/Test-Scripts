@@ -165,8 +165,23 @@ def mathematical_function(start_value, end_value, x_scale, y_scale):
 
     done()
     return
+
+
+def spiral():
+    # set up turtle
+    pen = Turtle()
+    pen.shape('classic')
+
+    # turtle movement
+    for x in range(240):
+        pen.forward(x)
+        pen.left(60)
+
+
+    done()
+    return
     
 
 # chose a function to run here
 if __name__ == "__main__":
-    mathematical_function(-180,180, 1, 200)
+    spiral()
