@@ -168,14 +168,19 @@ def mathematical_function(start_value, end_value, x_scale, y_scale):
 
 
 def spiral():
-    # set up turtle
+    colours = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+
+    # set up turtle/screen
     pen = Turtle()
     pen.shape('classic')
+    bgcolor('black')
+    pen.speed(60)
 
     # turtle movement
-    for x in range(240):
+    for x in range(300):
+        pen.pencolor(colours[x % 6])
         pen.forward(x)
-        pen.left(60)
+        pen.left(59)
 
 
     done()
