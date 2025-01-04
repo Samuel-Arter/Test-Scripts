@@ -5,20 +5,6 @@ from math import *
 from numpy import *
 
 
-def triangle():
-    # create turtle
-    turtle = Turtle()
-    turtle.color('red')
-    turtle.shape('turtle')
-
-    # turtle movement
-    for _ in range(3):
-        turtle.forward(100)
-        turtle.left(120)
-
-    done()
-    return
-
 
 def square():
     # create turtle
