@@ -39,11 +39,16 @@ def triangle_octagon():
     return
 
 
-def flower():
+def flower(x, y):
     # create turtle
     turtle = Turtle()
     turtle.shape('arrow')
     turtle.color('red', 'yellow')
+
+    # move turtle to start position
+    turtle.penup()
+    turtle.goto(x , y)
+    turtle.pendown()
 
     # turtle movement
     turtle.begin_fill()
@@ -51,6 +56,14 @@ def flower():
         turtle.forward(200)
         turtle.left(165)
     turtle.end_fill()
+
+    done()
+    return
+
+
+def interactive_flower():
+
+    getscreen().onclick(flower)
 
     done()
     return
@@ -150,6 +163,7 @@ def spiral():
     # turtle movement
     for x in range(300):
         pen.pencolor(colours[x % 6])
+        pen.pensize(x//50)
         pen.forward(x)
         pen.left(59)
 
@@ -160,4 +174,4 @@ def spiral():
 
 # chose a function to run here
 if __name__ == "__main__":
-    spiral()
+    interactive_flower()
